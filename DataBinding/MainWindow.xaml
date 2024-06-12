@@ -1,0 +1,34 @@
+﻿<Window x:Class="DataBinding.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DataBinding"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="450">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="120"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Label Grid.Column="0" Content="Artikelnr.:" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="15"/>
+        <Label Grid.Column="0" Grid.Row="1" Content="Bezeichner:" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="15"/>
+        <Label Grid.Column="0" Grid.Row="2" Content="Preis:" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="15"/>
+
+        <TextBox Grid.Column="1" TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Center" Width="277" Margin="22,0,0,0" Text="{Binding ArtikelNr}" IsReadOnly="True"/>
+        <TextBox Grid.Column="1" Grid.Row="1" TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Center" Width="277" Margin="22,0,0,0" Text="{Binding Bezeichner, UpdateSourceTrigger=PropertyChanged}"/>
+        <TextBox Grid.Column="1" Grid.Row="2" TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Center" Width="277" Margin="22,0,0,0" Text="{Binding Preis, UpdateSourceTrigger=PropertyChanged}"/>
+        <Button Grid.Column="1" Grid.Row="3" Content="Nächster Artikel" Margin="30" Click="NextArticle_Click"/>
+        <Button Grid.Column="1" Grid.Row="4" Content="AKTION 30% Rab" Margin="30" Click="Discount_Click"/>
+
+
+    </Grid>
+</Window>
